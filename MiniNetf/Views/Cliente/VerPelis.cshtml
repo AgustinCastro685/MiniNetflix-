@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MiniNext.Models.Pelicula>
+
+@{ ViewData["Title"] = "Peliculas"; }
+
+<head>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<font color=white>
+    <h1> @ViewBag.Title</h1>
+    <br><br>
+
+</font>
+
+<head>
+    <style>
+        body {
+            color:white;
+        }
+    </style>
+</head>
+
+
+
+@*@foreach (var item in Model)
+    {
+    @item.Nombre
+
+    @item.Descripcion
+
+    <tr>
+    <td><DIV ALIGN=center><a href="@item.Imageroute"><img src="@Url.Content("~/Images/"+"@ImageFile"+".jpg")" width="200px" height="300px" alt="imgf" /></a></DIV></td>
+    </tr>}*@
+
+
+<body>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Descripcion)
+    </td>
+
+    @*<div class="photo-display">
+            <a href="@item.Imageroute">  <img class img src="~\\wwwroot\\images\\@item.ImageFile\\.jpg"   alt="imgf" style= "width:200px; height:300px"  /> </a>
+        </div>*@
+
+    <td>
+        <div>
+            <a href="@item.Imageroute">  <img src="../wwwroot/images/@item.ImageFile/.jpg" alt="imgf" /> </a>
+        </div>
+    </td>
+</tr>}
+</body>
+
